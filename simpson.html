@@ -55,13 +55,16 @@
           })
           .then(function (quote) {
             // Build a block of HTML
-            const simpsonHtml = `
-                <p><strong>${quote[0].character}</strong></p>
-                <img src="${quote[0].image}" />
-                <blockquote>${quote[0].quote}</blockquote>
-                <blockquote>${quote[0].characterDirection}</blockquote>
+            for (let i = 0; i < quote.length; i++) {
+              const simpsonHtml = `
+                <p><strong>${quote[i].character}</strong></p>
+                <img src="${quote[i].image}" />
+                <blockquote>${quote[i].quote}</blockquote>
+                <blockquote>${quote[i].characterDirection}</blockquote>
               `;
-            document.querySelector('#simpson').innerHTML = simpsonHtml;
+
+              document.querySelector('#simpson').innerHTML = simpsonHtml;
+            }
           });
       }
 
